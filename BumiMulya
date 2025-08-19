@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Desa Bumi Mulya Bersinar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Header -->
+  <header class="bg-green-700 text-white p-4 text-center">
+    <h1 class="text-2xl font-bold">Desa Bumi Mulya Bersinar</h1>
+    <p class="text-sm">Informasi | Pengumuman | Kegiatan</p>
+  </header>
+
+  <!-- Form Input -->
+  <main class="p-6 max-w-4xl mx-auto">
+    <!-- Informasi -->
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold mb-4">Tambah Informasi</h2>
+      <form id="formInfo" class="space-y-2">
+        <input type="text" id="judulInfo" placeholder="Judul Informasi" class="w-full p-2 border rounded">
+        <textarea id="isiInfo" placeholder="Isi informasi" class="w-full p-2 border rounded"></textarea>
+        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-800">Simpan</button>
+      </form>
+      <div id="listInfo" class="mt-4 space-y-2"></div>
+    </section>
+
+    <!-- Pengumuman -->
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold mb-4">Tambah Pengumuman</h2>
+      <form id="formPengumuman" class="space-y-2">
+        <input type="text" id="judulPeng" placeholder="Judul Pengumuman" class="w-full p-2 border rounded">
+        <textarea id="isiPeng" placeholder="Isi pengumuman" class="w-full p-2 border rounded"></textarea>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800">Simpan</button>
+      </form>
+      <div id="listPengumuman" class="mt-4 space-y-2"></div>
+    </section>
+
+    <!-- Kegiatan -->
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold mb-4">Upload Kegiatan</h2>
+      <form id="formKegiatan" class="space-y-2">
+        <input type="text" id="judulKegiatan" placeholder="Judul Kegiatan" class="w-full p-2 border rounded">
+        <textarea id="isiKegiatan" placeholder="Deskripsi kegiatan" class="w-full p-2 border rounded"></textarea>
+        <input type="file" id="fotoKegiatan" multiple class="w-full p-2 border rounded">
+        <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-800">Upload</button>
+      </form>
+      <div id="listKegiatan" class="mt-4 space-y-4"></div>
+    </section>
+  </main>
+
+  <!-- Script -->
+  <script>
+    // === Informasi ===
+    document.getElementById("formInfo").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const judul = document.getElementById("judulInfo").value;
+      const isi = document.getElementById("isiInfo").value;
+
+      const div = document.createElement("div");
+      div.className = "p-3 bg-white rounded shadow";
+      div.innerHTML = `<h3 class="font-bold">${judul}</h3><p>${isi}</p>`;
+
+      document.getElementById("listInfo").appendChild(div);
+      this.reset();
+    });
+
+    // === Pengumuman ===
+    document.getElementById("formPengumuman").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const judul = document.getElementById("judulPeng").value;
+      const isi = document.getElementById("isiPeng").value;
+
+      const div = document.createElement("div");
+      div.className = "p-3 bg-white rounded shadow border-l-4 border-blue-500";
+      div.innerHTML = `<h3 class="font-bold">${judul}</h3><p>${isi}</p>`;
+
+      document.getElementById("listPengumuman").appendChild(div);
+      this.reset();
+    });
+
+    // === Kegiatan (dengan foto) ===
+    document.getElementById("formKegiatan").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const judul = document.getElementById("judulKegiatan").value;
+      const isi = document.getElementById("isiKegiatan").value;
+      const files = document.getElementById("fotoKegiatan").files;
+
+      let fotoHTML = "";
+      for (let i = 0; i < files.length; i++) {
+        const url = URL.createObjectURL(files[i]);
+        fotoHTML += `<img src="${url}" class="w-32 h-32 object-cover rounded shadow"> `;
+      }
+
+      const div = document.createElement("div");
+      div.className = "p-3 bg-white rounded shadow";
+      div.innerHTML = `<h3 class="font-bold">${judul}</h3><p>${isi}</p><div class="flex gap-2 mt-2 flex-wrap">${fotoHTML}</div>`;
+
+      document.getElementById("listKegiatan").appendChild(div);
+      this.reset();
+    });
+  </script>
+
+</body
