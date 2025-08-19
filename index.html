@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Desa Bumi Mulya Bersinar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- 🔹 Navbar -->
+  <nav class="bg-green-700 text-white p-4 shadow-md">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">🌾 Bumi Mulya Bersinar</h1>
+      <ul class="flex space-x-6 text-sm">
+        <li><a href="#home" class="hover:underline">Home</a></li>
+        <li><a href="#informasi" class="hover:underline">Informasi</a></li>
+        <li><a href="#pengumuman" class="hover:underline">Pengumuman</a></li>
+        <li><a href="#galeri" class="hover:underline">Galeri</a></li>
+        <li><a href="#kontak" class="hover:underline">Kontak</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 🔹 Hero Slideshow -->
+  <header id="home" class="relative w-full h-96 overflow-hidden">
+    <img id="heroSlide" src="images/foto1.jpg" class="w-full h-full object-cover transition-all duration-700">
+    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white text-center">
+      <h1 class="text-4xl font-bold">🌾 Desa Bumi Mulya Bersinar 🌾</h1>
+      <p class="mt-2 text-lg">Maju, Sejahtera, dan Bersinar untuk Semua</p>
+    </div>
+  </header>
+
+  <!-- 🔹 Informasi -->
+  <section id="informasi" class="max-w-6xl mx-auto py-12 px-6">
+    <h2 class="text-2xl font-bold text-green-700 mb-4">📌 Informasi Desa</h2>
+    <p class="text-gray-700">Desa Bumi Mulya Bersinar merupakan desa yang mengedepankan keterbukaan informasi publik, pelayanan masyarakat, serta pembangunan berkelanjutan.</p>
+  </section>
+
+  <!-- 🔹 Pengumuman -->
+  <section id="pengumuman" class="max-w-6xl mx-auto py-12 px-6 bg-white rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-green-700 mb-4">📢 Pengumuman</h2>
+    <ul class="list-disc pl-6 space-y-2 text-gray-700">
+      <li>Pelaksanaan gotong royong akan dilakukan pada hari Minggu pukul 07.00 WIB.</li>
+      <li>Pembagian BLT tahap 2 dijadwalkan pada tanggal 25 Agustus 2025.</li>
+    </ul>
+  </section>
+
+  <!-- 🔹 Upload Kegiatan -->
+  <section class="max-w-6xl mx-auto py-12 px-6">
+    <h2 class="text-2xl font-bold text-green-700 mb-4">📤 Upload Kegiatan Desa</h2>
+    <form class="bg-white p-6 rounded-lg shadow-md space-y-4">
+      <input type="text" placeholder="Judul kegiatan" class="w-full border p-2 rounded">
+      <textarea placeholder="Deskripsi kegiatan" class="w-full border p-2 rounded"></textarea>
+      <input type="file" class="w-full border p-2 rounded">
+      <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Upload</button>
+    </form>
+  </section>
+
+  <!-- 🔹 Galeri -->
+  <section id="galeri" class="max-w-6xl mx-auto py-12 px-6">
+    <h2 class="text-2xl font-bold text-green-700 mb-4">📷 Galeri Kegiatan</h2>
+    <div class="relative w-full max-w-3xl mx-auto">
+      <img id="slideshow" src="images/foto1.jpg" class="w-full h-80 object-cover rounded-lg shadow-md">
+      <button onclick="prevSlide()" class="absolute top-1/2 left-0 bg-black bg-opacity-50 text-white px-3 py-1">⟨</button>
+      <button onclick="nextSlide()" class="absolute top-1/2 right-0 bg-black bg-opacity-50 text-white px-3 py-1">⟩</button>
+    </div>
+  </section>
+
+  <!-- 🔹 Kontak -->
+  <section id="kontak" class="max-w-6xl mx-auto py-12 px-6 bg-white rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-green-700 mb-4">📞 Kontak Desa</h2>
+    <p>Alamat: Jl. Soekarno/Hatta No.1</p>
+    <p>Telepon: 0823-8731-6130</p>
+    <p>Email: bumimulyaoke@gmail.com</p>
+  </section>
+
+  <!-- 🔹 Footer -->
+  <footer class="bg-green-800 text-white py-6 mt-12">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6 text-center md:text-left">
+      <div>
+        <h3 class="font-bold text-lg mb-2">🌾 Bumi Mulya Bersinar</h3>
+        <p class="text-sm">Website resmi Desa Bumi Mulya Bersinar sebagai sarana informasi, pengumuman, dan dokumentasi kegiatan desa.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-2">🔗 Navigasi Cepat</h3>
+        <ul class="space-y-1 text-sm">
+          <li><a href="#home" class="hover:underline">Home</a></li>
+          <li><a href="#informasi" class="hover:underline">Informasi</a></li>
+          <li><a href="#pengumuman" class="hover:underline">Pengumuman</a></li>
+          <li><a href="#galeri" class="hover:underline">Galeri</a></li>
+          <li><a href="#kontak" class="hover:underline">Kontak</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-2">📲 Sosial Media</h3>
+        <div class="flex justify-center md:justify-start space-x-4">
+          <a href="#" class="hover:text-yellow-300">🌐 Facebook</a>
+          <a href="#" class="hover:text-yellow-300">📷 Instagram</a>
+          <a href="#" class="hover:text-yellow-300">▶️ YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center text-sm text-gray-300 mt-6 border-t border-green-600 pt-4">
+      © 2025 Desa Bumi Mulya Bersinar. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- 🔹 Script -->
+  <script src="script.js"></script>
+</body>
+</html>
